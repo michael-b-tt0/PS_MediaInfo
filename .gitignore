@@ -1,2 +1,6 @@
 /.vscode
 /runtimes
+/MediaInfo/obj/
+/MediaInfo/bin/
+/obj
+/bin
