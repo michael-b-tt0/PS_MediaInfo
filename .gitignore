@@ -1,5 +1,5 @@
 /.vscode
-/runtimes
+/runtimes/win-x64/
 /MediaInfo/obj/
 /MediaInfo/bin/
 /obj
