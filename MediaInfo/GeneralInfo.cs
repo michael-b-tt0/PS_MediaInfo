@@ -5,6 +5,11 @@ namespace GetMediaInfo;
 /// </summary>
 public sealed class GeneralInfo
 {
+    /// <summary>
+    /// Gets the filesystem object that was inspected.
+    /// </summary>
+    public required FileInfo File { get; init; }
+
     public required string FullName { get; init; }
 
     public string Name => Path.GetFileName(FullName);
@@ -14,9 +19,17 @@ public sealed class GeneralInfo
     public string Extension =>
         Path.GetExtension(FullName).TrimStart('.').ToUpperInvariant();
 
-    public long FileSize { get; init; }
+    /// <summary>
+    /// Gets the file size in bytes.
+    /// </summary>
+    public long Length { get; init; }
 
-    public double SizeMiB => FileSize / 1024d / 1024d;
+    /// <summary>
+    /// Gets the filesystem last-write time at inspection.
+    /// </summary>
+    public DateTime LastWriteTime { get; init; }
+
+    public double SizeMiB => Length / 1024d / 1024d;
 
     public TimeSpan? Duration { get; init; }
 

@@ -40,8 +40,10 @@ internal static class MediaInfoResultFactory
 
         return new GeneralInfo
         {
+            File = file,
             FullName = file.FullName,
-            FileSize = file.Length,
+            Length = file.Length,
+            LastWriteTime = file.LastWriteTime,
             Duration = ParseDuration(GetInfo(reader, MediaInfoStreamKind.General, 0, "Duration")),
             ContainerFormat = GetInfo(reader, MediaInfoStreamKind.General, 0, "Format/String"),
         };
@@ -63,7 +65,8 @@ internal static class MediaInfoResultFactory
             General = general,
             VideoStreamCount = videoStreamCount,
             VideoCodec = GetInfo(reader, MediaInfoStreamKind.Video, 0, "Format/String"),
-            Resolution = CreateResolution(width, height),
+            VideoWidth = width,
+            VideoHeight = height,
             FrameRateMode = GetInfo(reader, MediaInfoStreamKind.Video, 0, "FrameRate_Mode"),
             FrameRate = ParseDouble(GetInfo(reader, MediaInfoStreamKind.Video, 0, "FrameRate")),
             VideoBitRate = ParseInt64(videoBitRate),
@@ -141,6 +144,8 @@ internal static class MediaInfoResultFactory
             General = general,
             ImageStreamCount = imageStreamCount,
             ImageFormat = GetInfo(reader, MediaInfoStreamKind.Image, 0, "Format/String"),
+            Width = width,
+            Height = height,
             Resolution = CreateResolution(width, height),
             BitDepth = ParseInt32(GetInfo(reader, MediaInfoStreamKind.Image, 0, "BitDepth")),
             ColorSpace = GetInfo(reader, MediaInfoStreamKind.Image, 0, "ColorSpace"),

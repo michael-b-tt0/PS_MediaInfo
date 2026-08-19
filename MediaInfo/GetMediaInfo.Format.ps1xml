@@ -9,7 +9,7 @@
       <TableControl>
         <TableHeaders>
           <TableColumnHeader><Label>Name</Label></TableColumnHeader>
-          <TableColumnHeader><Label>Container</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Frame rate</Label></TableColumnHeader>
           <TableColumnHeader><Label>Resolution</Label></TableColumnHeader>
           <TableColumnHeader><Label>Duration</Label></TableColumnHeader>
           <TableColumnHeader><Label>Video</Label></TableColumnHeader>
@@ -19,9 +19,21 @@
           <TableRowEntry>
             <TableColumnItems>
               <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
-              <TableColumnItem><ScriptBlock>$_.General.ContainerFormat</ScriptBlock></TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  if ($null -ne $_.FrameRate) {
+                    '{0:0.###} fps' -f $_.FrameRate
+                  }
+                </ScriptBlock>
+              </TableColumnItem>
               <TableColumnItem><PropertyName>Resolution</PropertyName></TableColumnItem>
-              <TableColumnItem><ScriptBlock>$_.General.Duration</ScriptBlock></TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  if ($null -ne $_.Duration) {
+                    $_.Duration.ToString('hh\:mm\:ss\.fff')
+                  }
+                </ScriptBlock>
+              </TableColumnItem>
               <TableColumnItem><PropertyName>VideoCodec</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>AudioCodec</PropertyName></TableColumnItem>
             </TableColumnItems>
@@ -50,7 +62,13 @@
             <TableColumnItems>
               <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
               <TableColumnItem><ScriptBlock>$_.General.ContainerFormat</ScriptBlock></TableColumnItem>
-              <TableColumnItem><ScriptBlock>$_.General.Duration</ScriptBlock></TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  if ($null -ne $_.Duration) {
+                    $_.Duration.ToString('hh\:mm\:ss\.fff')
+                  }
+                </ScriptBlock>
+              </TableColumnItem>
               <TableColumnItem><PropertyName>AudioCodec</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>Artist</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>Album</PropertyName></TableColumnItem>
