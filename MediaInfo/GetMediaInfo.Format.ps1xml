@@ -2,52 +2,119 @@
 <Configuration>
   <ViewDefinitions>
     <View>
-      <Name>GetMediaInfo.MediaInfoResult</Name>
+      <Name>GetMediaInfo.VideoMediaInfoResult</Name>
       <ViewSelectedBy>
-        <TypeName>GetMediaInfo.MediaInfoResult</TypeName>
+        <TypeName>GetMediaInfo.VideoMediaInfoResult</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
-          <TableColumnHeader>
-            <Label>Name</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Container</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Resolution</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Duration</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Video</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Audio</Label>
-          </TableColumnHeader>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Container</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Resolution</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Duration</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Video</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Audio</Label></TableColumnHeader>
         </TableHeaders>
         <TableRowEntries>
           <TableRowEntry>
             <TableColumnItems>
+              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
+              <TableColumnItem><ScriptBlock>$_.General.ContainerFormat</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>Resolution</PropertyName></TableColumnItem>
+              <TableColumnItem><ScriptBlock>$_.General.Duration</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>VideoCodec</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>AudioCodec</PropertyName></TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>GetMediaInfo.AudioMediaInfoResult</Name>
+      <ViewSelectedBy>
+        <TypeName>GetMediaInfo.AudioMediaInfoResult</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Format</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Duration</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Audio</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Artist</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Album</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Track</Label></TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
+              <TableColumnItem><ScriptBlock>$_.General.ContainerFormat</ScriptBlock></TableColumnItem>
+              <TableColumnItem><ScriptBlock>$_.General.Duration</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>AudioCodec</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>Artist</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>Album</PropertyName></TableColumnItem>
               <TableColumnItem>
-                <PropertyName>Name</PropertyName>
+                <ScriptBlock>
+                  if ($null -ne $_.TrackNumber) {
+                    if ($null -ne $_.TrackCount) {
+                      '{0}/{1}' -f $_.TrackNumber, $_.TrackCount
+                    } else {
+                      $_.TrackNumber
+                    }
+                  }
+                </ScriptBlock>
               </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>ContainerFormat</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Resolution</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Duration</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>VideoCodec</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>AudioCodec</PropertyName>
-              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>GetMediaInfo.ImageMediaInfoResult</Name>
+      <ViewSelectedBy>
+        <TypeName>GetMediaInfo.ImageMediaInfoResult</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Format</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Resolution</Label></TableColumnHeader>
+          <TableColumnHeader><Label>BitDepth</Label></TableColumnHeader>
+          <TableColumnHeader><Label>SizeMiB</Label></TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>ImageFormat</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>Resolution</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>BitDepth</PropertyName></TableColumnItem>
+              <TableColumnItem><ScriptBlock>$_.General.SizeMiB</ScriptBlock></TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>GetMediaInfo.UnknownMediaInfoResult</Name>
+      <ViewSelectedBy>
+        <TypeName>GetMediaInfo.UnknownMediaInfoResult</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Format</Label></TableColumnHeader>
+          <TableColumnHeader><Label>SizeMiB</Label></TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
+              <TableColumnItem><ScriptBlock>$_.General.ContainerFormat</ScriptBlock></TableColumnItem>
+              <TableColumnItem><ScriptBlock>$_.General.SizeMiB</ScriptBlock></TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
         </TableRowEntries>

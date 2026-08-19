@@ -10,7 +10,11 @@ namespace GetMediaInfo.Commands;
     VerbsCommon.Get,
     "MediaFileInfo",
     DefaultParameterSetName = PathParameterSet)]
-[OutputType(typeof(MediaInfoResult))]
+[OutputType(
+    typeof(VideoMediaInfoResult),
+    typeof(AudioMediaInfoResult),
+    typeof(ImageMediaInfoResult),
+    typeof(UnknownMediaInfoResult))]
 public sealed class GetMediaFileInfoCommand : PSCmdlet
 {
     private const string PathParameterSet = "Path";

@@ -1,7 +1,7 @@
 namespace GetMediaInfo;
 
 /// <summary>
-/// Represents the pixel dimensions of a video stream.
+/// Represents the pixel dimensions of a video or image stream.
 /// </summary>
 public readonly record struct MediaResolution(int Width, int Height)
 {

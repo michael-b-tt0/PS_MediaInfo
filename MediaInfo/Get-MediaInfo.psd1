@@ -1,6 +1,6 @@
 @{
     RootModule = 'MediaInfo.dll'
-    ModuleVersion = '4.0.0'
+    ModuleVersion = '4.0.2'
     GUID = '115ad8ce-bfd9-4cb4-844c-e20fa04f2634'
     Author = 'Get-MediaInfo contributors'
     Copyright = '(c) Get-MediaInfo contributors. All rights reserved.'

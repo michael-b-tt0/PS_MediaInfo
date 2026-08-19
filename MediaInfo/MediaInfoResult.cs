@@ -1,66 +1,38 @@
 namespace GetMediaInfo;
 
 /// <summary>
-/// Strongly typed metadata returned by Get-MediaFileInfo.
+/// Base class for strongly typed metadata returned by Get-MediaFileInfo.
 /// </summary>
-public sealed class MediaInfoResult
+public abstract class MediaInfoResult
 {
     /// <summary>
-    /// Gets the fully qualified filesystem path.
+    /// Gets information shared by every supported media type.
     /// </summary>
-    public required string FullName { get; init; }
+    public required GeneralInfo General { get; init; }
 
     /// <summary>
-    /// Gets the file name, including its extension.
+    /// Gets the dominant media type used to select this result shape.
     /// </summary>
-    public string Name => Path.GetFileName(FullName);
+    public abstract MediaType MediaType { get; }
+}
 
-    /// <summary>
-    /// Gets the containing directory.
-    /// </summary>
-    public string? DirectoryName => Path.GetDirectoryName(FullName);
-
-    /// <summary>
-    /// Gets the extension without its leading dot.
-    /// </summary>
-    public string Extension =>
-        Path.GetExtension(FullName).TrimStart('.').ToUpperInvariant();
-
-    /// <summary>
-    /// Gets the file size in bytes.
-    /// </summary>
-    public long FileSize { get; init; }
-
-    /// <summary>
-    /// Gets the file size in mebibytes.
-    /// </summary>
-    public double SizeMiB => FileSize / 1024d / 1024d;
-
-    /// <summary>
-    /// Gets the media duration.
-    /// </summary>
-    public TimeSpan? Duration { get; init; }
-
-    public string? ContainerFormat { get; init; }
+/// <summary>
+/// Describes a file whose dominant content is video.
+/// </summary>
+public sealed class VideoMediaInfoResult : MediaInfoResult
+{
+    public override MediaType MediaType => MediaType.Video;
 
     public int VideoStreamCount { get; init; }
 
-    public bool HasVideo => VideoStreamCount > 0;
-
     public string? VideoCodec { get; init; }
 
-    /// <summary>
-    /// Gets the dimensions of the primary video stream.
-    /// </summary>
     public MediaResolution? Resolution { get; init; }
 
     public string? FrameRateMode { get; init; }
 
     public double? FrameRate { get; init; }
 
-    /// <summary>
-    /// Gets the primary video bit rate in bits per second.
-    /// </summary>
     public long? VideoBitRate { get; init; }
 
     public double? DisplayAspectRatio { get; init; }
@@ -81,28 +53,78 @@ public sealed class MediaInfoResult
 
     public int AudioStreamCount { get; init; }
 
-    public bool HasAudio => AudioStreamCount > 0;
-
     public string? AudioCodec { get; init; }
 
-    /// <summary>
-    /// Gets the primary audio bit rate in bits per second.
-    /// </summary>
     public long? AudioBitRate { get; init; }
 
     public string? AudioBitRateMode { get; init; }
 
-    public string? Performer { get; init; }
-
-    public string? Track { get; init; }
-
-    public string? Album { get; init; }
-
-    public string? RecordedDate { get; init; }
-
-    public string? Genre { get; init; }
-
     public int TextStreamCount { get; init; }
 
     public string? TextFormats { get; init; }
+}
+
+/// <summary>
+/// Describes a file whose dominant content is audio.
+/// </summary>
+public sealed class AudioMediaInfoResult : MediaInfoResult
+{
+    public override MediaType MediaType => MediaType.Audio;
+
+    public int AudioStreamCount { get; init; }
+
+    public string? AudioCodec { get; init; }
+
+    public long? AudioBitRate { get; init; }
+
+    public string? AudioBitRateMode { get; init; }
+
+    public int? Channels { get; init; }
+
+    public int? SamplingRate { get; init; }
+
+    public int ArtworkCount { get; init; }
+
+    public string? Title { get; init; }
+
+    public string? Album { get; init; }
+
+    public string? Artist { get; init; }
+
+    public int? TrackNumber { get; init; }
+
+    public int? TrackCount { get; init; }
+
+    public string? Genre { get; init; }
+
+    public string? RecordedDate { get; init; }
+}
+
+/// <summary>
+/// Describes a file whose dominant content is one or more images.
+/// </summary>
+public sealed class ImageMediaInfoResult : MediaInfoResult
+{
+    public override MediaType MediaType => MediaType.Image;
+
+    public int ImageStreamCount { get; init; }
+
+    public string? ImageFormat { get; init; }
+
+    public MediaResolution? Resolution { get; init; }
+
+    public int? BitDepth { get; init; }
+
+    public string? ColorSpace { get; init; }
+
+    public string? Title { get; init; }
+}
+
+/// <summary>
+/// Describes a file that MediaInfo opened but could not classify as video,
+/// audio, or image media.
+/// </summary>
+public sealed class UnknownMediaInfoResult : MediaInfoResult
+{
+    public override MediaType MediaType => MediaType.Unknown;
 }
