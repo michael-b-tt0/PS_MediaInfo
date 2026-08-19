@@ -37,6 +37,11 @@ public abstract class MediaInfoResult
     public string Name => General.Name;
 
     /// <summary>
+    /// Gets the file name without its extension.
+    /// </summary>
+    public string BaseName => General.BaseName;
+
+    /// <summary>
     /// Gets the containing directory.
     /// </summary>
     public string? DirectoryName => General.DirectoryName;
@@ -192,7 +197,12 @@ public sealed class ImageMediaInfoResult : MediaInfoResult
     /// </summary>
     public int? Height { get; init; }
 
-    public MediaResolution? Resolution { get; init; }
+    /// <summary>
+    /// Gets the primary image resolution as a width-by-height string.
+    /// </summary>
+    public string? Resolution => Width is > 0 && Height is > 0
+        ? $"{Width}x{Height}"
+        : null;
 
     public int? BitDepth { get; init; }
 

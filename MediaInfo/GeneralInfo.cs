@@ -14,6 +14,11 @@ public sealed class GeneralInfo
 
     public string Name => Path.GetFileName(FullName);
 
+    /// <summary>
+    /// Gets the file name without its extension.
+    /// </summary>
+    public string BaseName => Path.GetFileNameWithoutExtension(FullName);
+
     public string? DirectoryName => Path.GetDirectoryName(FullName);
 
     public string Extension =>

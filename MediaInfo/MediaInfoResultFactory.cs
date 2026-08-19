@@ -146,17 +146,11 @@ internal static class MediaInfoResultFactory
             ImageFormat = GetInfo(reader, MediaInfoStreamKind.Image, 0, "Format/String"),
             Width = width,
             Height = height,
-            Resolution = CreateResolution(width, height),
             BitDepth = ParseInt32(GetInfo(reader, MediaInfoStreamKind.Image, 0, "BitDepth")),
             ColorSpace = GetInfo(reader, MediaInfoStreamKind.Image, 0, "ColorSpace"),
             Title = GetInfo(reader, MediaInfoStreamKind.Image, 0, "Title"),
         };
     }
-
-    private static MediaResolution? CreateResolution(int? width, int? height) =>
-        width is > 0 && height is > 0
-            ? new MediaResolution(width.Value, height.Value)
-            : null;
 
     private static string? GetInfo(
         MediaInfoReader reader,
