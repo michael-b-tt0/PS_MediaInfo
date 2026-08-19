@@ -4,7 +4,7 @@ using GetMediaInfo.Interop;
 namespace GetMediaInfo;
 
 /// <summary>
-/// Provides managed access to the subset of MediaInfo used by Get-MediaInfo.
+/// Provides managed access to the subset of MediaInfo used by Get-MediaFileInfo.
 /// A reader owns one native MediaInfo instance and one opened file.
 /// </summary>
 public sealed class MediaInfoReader : IDisposable

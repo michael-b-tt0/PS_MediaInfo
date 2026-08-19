@@ -1,0 +1,21 @@
+@{
+    RootModule = 'MediaInfo.dll'
+    ModuleVersion = '4.0.0'
+    GUID = '115ad8ce-bfd9-4cb4-844c-e20fa04f2634'
+    Author = 'Get-MediaInfo contributors'
+    Copyright = '(c) Get-MediaInfo contributors. All rights reserved.'
+    Description = 'MediaInfo integration for PowerShell.'
+    PowerShellVersion = '7.6'
+    CompatiblePSEditions = @('Core')
+    ProcessorArchitecture = 'Amd64'
+    FormatsToProcess = @('GetMediaInfo.Format.ps1xml')
+    FunctionsToExport = @()
+    CmdletsToExport = @('Get-MediaFileInfo')
+    VariablesToExport = @()
+    AliasesToExport = @()
+    PrivateData = @{
+        PSData = @{
+            Tags = @('MediaInfo', 'Multimedia', 'Metadata', 'Video', 'Audio')
+        }
+    }
+}
