@@ -2,7 +2,7 @@
 <Configuration>
   <ViewDefinitions>
     <View>
-      <Name>GetMediaInfo.VideoMediaInfoResult</Name>
+      <Name>GetMediaInfo.VideoMediaInfoResult.Table</Name>
       <ViewSelectedBy>
         <TypeName>GetMediaInfo.VideoMediaInfoResult</TypeName>
       </ViewSelectedBy>
@@ -43,7 +43,7 @@
     </View>
 
     <View>
-      <Name>GetMediaInfo.AudioMediaInfoResult</Name>
+      <Name>GetMediaInfo.AudioMediaInfoResult.Table</Name>
       <ViewSelectedBy>
         <TypeName>GetMediaInfo.AudioMediaInfoResult</TypeName>
       </ViewSelectedBy>
@@ -90,7 +90,7 @@
     </View>
 
     <View>
-      <Name>GetMediaInfo.ImageMediaInfoResult</Name>
+      <Name>GetMediaInfo.ImageMediaInfoResult.Table</Name>
       <ViewSelectedBy>
         <TypeName>GetMediaInfo.ImageMediaInfoResult</TypeName>
       </ViewSelectedBy>
@@ -117,7 +117,7 @@
     </View>
 
     <View>
-      <Name>GetMediaInfo.UnknownMediaInfoResult</Name>
+      <Name>GetMediaInfo.UnknownMediaInfoResult.Table</Name>
       <ViewSelectedBy>
         <TypeName>GetMediaInfo.UnknownMediaInfoResult</TypeName>
       </ViewSelectedBy>
@@ -133,6 +133,274 @@
               <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>ContainerFormat</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>SizeMiB</PropertyName></TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>GetMediaInfo.VideoMediaInfoResult.Extended.Table</Name>
+      <ViewSelectedBy>
+        <TypeName>GetMediaInfo.VideoMediaInfoResult.Extended</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader><Label>General</Label></TableColumnHeader>
+          <TableColumnHeader><Label>FullName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>PSPath</Label></TableColumnHeader>
+          <TableColumnHeader><Label>File</Label></TableColumnHeader>
+          <TableColumnHeader><Label>LastWriteTime</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>BaseName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>DirectoryName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Extension</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Length</Label></TableColumnHeader>
+          <TableColumnHeader><Label>SizeMiB</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Duration</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ContainerFormat</Label></TableColumnHeader>
+          <TableColumnHeader><Label>MediaType</Label></TableColumnHeader>
+          <TableColumnHeader><Label>VideoStreamCount</Label></TableColumnHeader>
+          <TableColumnHeader><Label>VideoCodec</Label></TableColumnHeader>
+          <TableColumnHeader><Label>VideoWidth</Label></TableColumnHeader>
+          <TableColumnHeader><Label>VideoHeight</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Resolution</Label></TableColumnHeader>
+          <TableColumnHeader><Label>FrameRateMode</Label></TableColumnHeader>
+          <TableColumnHeader><Label>FrameRate</Label></TableColumnHeader>
+          <TableColumnHeader><Label>VideoBitRate</Label></TableColumnHeader>
+          <TableColumnHeader><Label>DisplayAspectRatio</Label></TableColumnHeader>
+          <TableColumnHeader><Label>FormatProfile</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ScanType</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ColorSpace</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ColorRange</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ColorPrimaries</Label></TableColumnHeader>
+          <TableColumnHeader><Label>TransferCharacteristics</Label></TableColumnHeader>
+          <TableColumnHeader><Label>MatrixCoefficients</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioStreamCount</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioCodec</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioBitRate</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioBitRateMode</Label></TableColumnHeader>
+          <TableColumnHeader><Label>TextStreamCount</Label></TableColumnHeader>
+          <TableColumnHeader><Label>TextFormats</Label></TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+                <TableColumnItem><PropertyName>General</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>FullName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>PSPath</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>File</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>LastWriteTime</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>BaseName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>DirectoryName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Extension</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Length</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>SizeMiB</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Duration</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ContainerFormat</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>MediaType</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>VideoStreamCount</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>VideoCodec</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>VideoWidth</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>VideoHeight</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Resolution</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>FrameRateMode</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>FrameRate</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>VideoBitRate</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>DisplayAspectRatio</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>FormatProfile</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ScanType</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ColorSpace</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ColorRange</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ColorPrimaries</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>TransferCharacteristics</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>MatrixCoefficients</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioStreamCount</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioCodec</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioBitRate</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioBitRateMode</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>TextStreamCount</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>TextFormats</PropertyName></TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>GetMediaInfo.AudioMediaInfoResult.Extended.Table</Name>
+      <ViewSelectedBy>
+        <TypeName>GetMediaInfo.AudioMediaInfoResult.Extended</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader><Label>General</Label></TableColumnHeader>
+          <TableColumnHeader><Label>FullName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>PSPath</Label></TableColumnHeader>
+          <TableColumnHeader><Label>File</Label></TableColumnHeader>
+          <TableColumnHeader><Label>LastWriteTime</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>BaseName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>DirectoryName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Extension</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Length</Label></TableColumnHeader>
+          <TableColumnHeader><Label>SizeMiB</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Duration</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ContainerFormat</Label></TableColumnHeader>
+          <TableColumnHeader><Label>MediaType</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioStreamCount</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioCodec</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioBitRate</Label></TableColumnHeader>
+          <TableColumnHeader><Label>AudioBitRateMode</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Channels</Label></TableColumnHeader>
+          <TableColumnHeader><Label>SamplingRate</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ArtworkCount</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Title</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Album</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Artist</Label></TableColumnHeader>
+          <TableColumnHeader><Label>TrackNumber</Label></TableColumnHeader>
+          <TableColumnHeader><Label>TrackCount</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Genre</Label></TableColumnHeader>
+          <TableColumnHeader><Label>RecordedDate</Label></TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+                <TableColumnItem><PropertyName>General</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>FullName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>PSPath</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>File</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>LastWriteTime</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>BaseName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>DirectoryName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Extension</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Length</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>SizeMiB</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Duration</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ContainerFormat</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>MediaType</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioStreamCount</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioCodec</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioBitRate</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>AudioBitRateMode</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Channels</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>SamplingRate</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ArtworkCount</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Title</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Album</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Artist</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>TrackNumber</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>TrackCount</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Genre</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>RecordedDate</PropertyName></TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>GetMediaInfo.ImageMediaInfoResult.Extended.Table</Name>
+      <ViewSelectedBy>
+        <TypeName>GetMediaInfo.ImageMediaInfoResult.Extended</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader><Label>General</Label></TableColumnHeader>
+          <TableColumnHeader><Label>FullName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>PSPath</Label></TableColumnHeader>
+          <TableColumnHeader><Label>File</Label></TableColumnHeader>
+          <TableColumnHeader><Label>LastWriteTime</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>BaseName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>DirectoryName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Extension</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Length</Label></TableColumnHeader>
+          <TableColumnHeader><Label>SizeMiB</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Duration</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ContainerFormat</Label></TableColumnHeader>
+          <TableColumnHeader><Label>MediaType</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ImageStreamCount</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ImageFormat</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Width</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Height</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Resolution</Label></TableColumnHeader>
+          <TableColumnHeader><Label>BitDepth</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ColorSpace</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Title</Label></TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+                <TableColumnItem><PropertyName>General</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>FullName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>PSPath</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>File</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>LastWriteTime</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>BaseName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>DirectoryName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Extension</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Length</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>SizeMiB</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Duration</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ContainerFormat</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>MediaType</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ImageStreamCount</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ImageFormat</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Width</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Height</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Resolution</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>BitDepth</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ColorSpace</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Title</PropertyName></TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>GetMediaInfo.UnknownMediaInfoResult.Extended.Table</Name>
+      <ViewSelectedBy>
+        <TypeName>GetMediaInfo.UnknownMediaInfoResult.Extended</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader><Label>General</Label></TableColumnHeader>
+          <TableColumnHeader><Label>FullName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>PSPath</Label></TableColumnHeader>
+          <TableColumnHeader><Label>File</Label></TableColumnHeader>
+          <TableColumnHeader><Label>LastWriteTime</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Name</Label></TableColumnHeader>
+          <TableColumnHeader><Label>BaseName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>DirectoryName</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Extension</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Length</Label></TableColumnHeader>
+          <TableColumnHeader><Label>SizeMiB</Label></TableColumnHeader>
+          <TableColumnHeader><Label>Duration</Label></TableColumnHeader>
+          <TableColumnHeader><Label>ContainerFormat</Label></TableColumnHeader>
+          <TableColumnHeader><Label>MediaType</Label></TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+                <TableColumnItem><PropertyName>General</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>FullName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>PSPath</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>File</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>LastWriteTime</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>BaseName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>DirectoryName</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Extension</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Length</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>SizeMiB</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>Duration</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>ContainerFormat</PropertyName></TableColumnItem>
+                <TableColumnItem><PropertyName>MediaType</PropertyName></TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
         </TableRowEntries>

@@ -43,6 +43,14 @@ public sealed class GetMediaFileInfoCommand : PSCmdlet
     [Alias("LP", "PSPath")]
     public string[] LiteralPath { get; set; } = [];
 
+    /// <summary>
+    /// Gets or sets whether to display all properties available on each result.
+    /// This affects only the default formatting view; the emitted result object
+    /// remains strongly typed.
+    /// </summary>
+    [Parameter]
+    public SwitchParameter Detailed { get; set; }
+
     /// <inheritdoc />
     protected override void ProcessRecord()
     {
@@ -146,7 +154,16 @@ public sealed class GetMediaFileInfoCommand : PSCmdlet
         try
         {
             using MediaInfoReader reader = new(resolvedPath);
-            WriteObject(MediaInfoResultFactory.Create(reader));
+            MediaInfoResult result = MediaInfoResultFactory.Create(reader);
+
+            if (Detailed)
+            {
+                WriteDetailedResult(result);
+            }
+            else
+            {
+                WriteObject(result);
+            }
         }
         catch (PipelineStoppedException)
         {
@@ -188,6 +205,13 @@ public sealed class GetMediaFileInfoCommand : PSCmdlet
         object? target)
     {
         WriteError(new ErrorRecord(exception, errorId, category, target));
+    }
+
+    private void WriteDetailedResult(MediaInfoResult result)
+    {
+        PSObject displayResult = PSObject.AsPSObject(result);
+        displayResult.TypeNames.Insert(0, $"{result.GetType().FullName}.Extended");
+        WriteObject(displayResult);
     }
 
     private static bool IsFileSystemProvider(ProviderInfo provider) =>
