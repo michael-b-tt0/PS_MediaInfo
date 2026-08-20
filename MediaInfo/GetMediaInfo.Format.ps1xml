@@ -18,7 +18,7 @@
         <TableRowEntries>
           <TableRowEntry>
             <TableColumnItems>
-              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
               <TableColumnItem>
                 <ScriptBlock>
                   if ($null -ne $_.FrameRate) {
@@ -60,8 +60,8 @@
         <TableRowEntries>
           <TableRowEntry>
             <TableColumnItems>
-              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
-              <TableColumnItem><ScriptBlock>$_.General.ContainerFormat</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>ContainerFormat</PropertyName></TableColumnItem>
               <TableColumnItem>
                 <ScriptBlock>
                   if ($null -ne $_.Duration) {
@@ -105,11 +105,11 @@
         <TableRowEntries>
           <TableRowEntry>
             <TableColumnItems>
-              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>ImageFormat</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>Resolution</PropertyName></TableColumnItem>
               <TableColumnItem><PropertyName>BitDepth</PropertyName></TableColumnItem>
-              <TableColumnItem><ScriptBlock>$_.General.SizeMiB</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>SizeMiB</PropertyName></TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
         </TableRowEntries>
@@ -130,9 +130,9 @@
         <TableRowEntries>
           <TableRowEntry>
             <TableColumnItems>
-              <TableColumnItem><ScriptBlock>$_.General.Name</ScriptBlock></TableColumnItem>
-              <TableColumnItem><ScriptBlock>$_.General.ContainerFormat</ScriptBlock></TableColumnItem>
-              <TableColumnItem><ScriptBlock>$_.General.SizeMiB</ScriptBlock></TableColumnItem>
+              <TableColumnItem><PropertyName>Name</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>ContainerFormat</PropertyName></TableColumnItem>
+              <TableColumnItem><PropertyName>SizeMiB</PropertyName></TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
         </TableRowEntries>
